@@ -13,6 +13,7 @@
 
 # 移除要替换的包
 rm -rf feeds/packages/net/v2ray-geodata
+rm -rf feeds/luci/applications/luci-app-homeproxy
 
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
@@ -32,6 +33,7 @@ git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-ali
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-pushbot
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-jellyfin luci-lib-taskd luci-lib-xterm taskd
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-linkease linkease ffmpeg-remux
+git clone --depth=1 https://github.com/douglarek/luci-app-homeproxy package/luci-app-homeproxy
 
 # 加入OpenClash核心
 chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
